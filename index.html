@@ -23,10 +23,12 @@
     <p><b>ANSWER:</b></p>
     <br>
     <p>Type in an array:</p>
-    <form id='#form1'>
-      <input type='text' id='input-section-1' default="['apple','bannana','pear']"></input>
-      <button type='submit' id='button1'>Submit</button>
+    <form id='form1'>
+      <input type='text' id='input1' required minlength='1' pattern='[a-z]{1,}'></input>
+      <button type='submit' id='button1' name='button'>Submit</button>
+      <button type='button' id='button2' name='button'>Pick</button>
     </form>
-    <p><b>:<span id='output-section-1'></span></b></p>
+    <p><b>your picks:<span id='output-section-1'></span></b></p>
+    <p><b>Random picked: <span id='output-section-2'></span></b></p>
   </body>
 </html>

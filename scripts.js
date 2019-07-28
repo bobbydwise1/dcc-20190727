@@ -7,19 +7,23 @@ Given a stream of elements too large to store in memory, pick a random element f
 */
 
 const pickElement = (yourArray) => {
-  let number = Math.ceil(Math.random()*yourArray.length-1);
+  let number = Math.floor(Math.random()*yourArray.length);
   console.log(number)
   return yourArray[number];
 };
 
-let test = ['apple','bannana','pear','orange'];
-console.log('test: ',pickElement(test));
 
 $(document).ready(function() {
+  let store = [];
   $('#form1').submit(function(event) {
-    let input1 = JSON.parse($('#input-section-1').val());
-    console.log('your input: ',input1)
-    let output1 = pickElement(input1);
-    $('#output-section-1').text('your output: ', output1);
+    event.preventDefault();
+    let input1 = $('#input1').val()
+    store.push(input1);
+    $('#output-section-1').append('<p>'+input1+'</p>');
+  });
+  $('#button2').click(function(event) {
+    event.preventDefault();
+    let output2 = pickElement(store);
+    $('#output-section-2').text(output2);
   });
 });
